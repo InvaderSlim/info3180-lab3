@@ -9,9 +9,19 @@ from app import app
 from flask import render_template, request, redirect, url_for, flash
 
 from app import mail
-from flask_mail import Message
+from flask_mail import Mail, Message
 
 from .forms import ContactForm
+
+
+app.config['MAIL_SERVER']='smtp.mailtrap.io'
+app.config['MAIL_PORT'] = 2525
+app.config['MAIL_USERNAME'] = '70ef666e41690a'
+app.config['MAIL_PASSWORD'] = 'a79270f342d127'
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+
+mail = Mail(app)
 
 
 ###
