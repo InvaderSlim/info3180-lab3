@@ -1,3 +1,47 @@
 body {
     padding-top: 5rem;
 }
+.flashes{
+    /* margin: 0 auto 0 auto; */
+    list-style-type: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px 50px;
+    border-radius: 12px;
+    background-color: lime;
+    color: white;
+}
+#fieldName{
+    font-weight: bold;
+}
+#messageField{
+    height: 30px;
+    /* width: ; */
+    margin-bottom: 20px;
+}
+#submit{
+    /* margin-top: 20px;   */
+    background-color: blue;   
+    color: white;
+    border-radius: 5px;   
+    padding: 3px 17px;
+    display: inline-block;
+    border: 0px;
+
+}
+#req{
+    color: red;
+}
+.title{
+    font-weight: bold;
+}
+.para{
+    margin-top: 15px;
+}
+#messageField input{
+    height: 90px;
+    display: block;
+}
+#hr{
+    border: 1px solid #adaaaa;
+}

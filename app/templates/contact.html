@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <!-- <style>
+        #fieldName{
+            font-weight: bold;
+        }
+        #messageField{
+            height: 30px;
+            /* width: ; */
+            margin-bottom: 20px;
+        }
+        #submit{
+            /* margin-top: 20px;   */
+            background-color: blue;   
+            color: white;
+            border-radius: 5px;   
+            padding: 3px 17px;
+            display: inline-block;
+            border: 0px;
+
+        }
+        #req{
+            color: red;
+        }
+        .title{
+            font-weight: bold;
+        }
+        .para{
+            margin-top: 15px;
+        }
+        #messageField input{
+            height: 90px;
+            display: block;
+        }
+        #hr{
+            border: 1px solid #adaaaa;
+        }
+    </style> -->
+    <div class="form-wrapper">
+      <h2 class="title">Contact Form</h2>
+      <hr id="hr">
+      <p class="para">Fill in this form to contact the site owners.</p>
+
+      <form method="POST" action="{{ url_for('contact') }}">
+
+          <fieldset class="form-field">
+              <div id="fieldName"><p class="para">{{ form.name.label }} <span id="req">(Required)</span></p> </div>
+              <p class="para">Please enter your full name</p> 
+              {{ form.name}}
+          </fieldset>
+
+          <fieldset class="form-field">
+              <div id="fieldName"><p class="para">{{ form.email.label}} <span id="req">(Required)</span></p> </div>
+              <p class="para">Please enter your e-mail address</p> 
+              {{ form.email }}
+          </fieldset>
+          <fieldset class="form-field">
+            <div id="fieldName"><p class="para">{{ form.subject.label }} <span id="req">(Required)</span></p> </div>
+            <p class="para">Please enter the subject for your message</p> 
+            {{ form.subject(size=20) }}
+        </fieldset>
+
+          <fieldset class="form-field">
+              <div id="fieldName"><p class="para">{{ form.message.label }} <span id="req">(Required)</span></p> </div>
+              <p class="para">Please enter the message you woul like to send</p> 
+              <div id="messageField">{{ form.message}}</div>
+              <br><br><br>
+          </fieldset>
+
+          {{ form.csrf_token }}
+
+          <span id="submit">{{ form.submit(value='Send')}}</span>
+
+      </form>
+    </div>
+
+{% endblock %}
